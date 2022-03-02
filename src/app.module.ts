@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { postgresConfig } from './infrastructure/configs/postgres/config';
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true })],
+  imports: [TypeOrmModule.forRoot(postgresConfig)],
   controllers: [],
   providers: [],
 })
